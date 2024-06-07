@@ -1,0 +1,22 @@
+{% extends 'nav.html' %}
+{% block nav %}
+<div class="container-fluid p-5">
+    <h1>{{product.title}}</h1>
+    <div class="row border p-3 shadow">
+        <div class="col">
+            <img src="{{product.image.url}}" alt="" class="img-fluid">
+        </div>
+        <div class="col d-flex flex-column justify-content-center p-3">
+            <h2>{{product.title}}</h2>
+            <p>Category:{{product.category}}</p>
+            <h2>{{product.description}}</h2>
+            <h2>price: RS.{{product.price}}</h2>
+            <div class="mt-5">
+                <a href="{% url 'acart' product.id %}" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i>Add To Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock nav %}
